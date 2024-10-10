@@ -1,0 +1,163 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Options
+@using SwipetorApp.Services
+@using SwipetorApp.Services.Config
+@using WebAppShared.WebSys
+@model SwipetorApp.Models.ViewModels.AppshellViewModel
+@inject UIConfigFactorySvc UIConfigFactorySvc
+@inject UserDeviceSvc UserDeviceSvc
+@inject IOptions<SiteConfig> SiteConfig
+@{
+    Layout = null;
+    var site = SiteConfig.Value;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>@Model.Title</title>
+
+    <meta name="description" content="@Model.Description"/>
+    <meta name="keywords" content="exclusive videos, video swiping, monetise content, web app, push notifications, home screen app, user acquisition, private messages, video tools, custom web address, flexible hosting, freedom from app stores, community ownership, quality content">
+    <meta name="viewport"
+          content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"/>
+    <meta name="theme-color" content="#000000"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link rel="shortcut icon" href="/public/swipetor/favicon-96.png"/>
+
+    @if (site.IsRta)
+    {
+        <meta name="RATING" content="RTA-5042-1996-1400-1577-RTA"/>
+    }
+
+    @if (Model.Url != null)
+    {
+        <link rel="canonical" href="@Model.Url"/>
+    }
+
+    @if (Model.OpenGraphType != null)
+    {
+        <partial name="OpenGraphTags" model="Model"/>
+    }
+
+    <link rel="manifest" href="/manifest.json"/>
+    <link rel="stylesheet" href="~/public/styles/public.css"/>
+
+    <style>
+        #welcome {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #welcome img {
+            width: 30%;
+            max-width: 200px;
+            height: auto;
+        }
+    </style>
+
+    <!-- <script>
+            // if ('serviceWorker' in navigator) {
+            // 	navigator.serviceWorker.register('/sw.js');
+            // }
+        </script> -->
+
+    <script>
+        console.defaultError = console.error.bind(console);
+        console.errors = [];
+        console.error = function () {
+            // default &  console.error()
+            console.defaultError.apply(console, arguments);
+            // new & array data
+            console.errors.push(Array.from(arguments));
+        }
+
+        console.defaultWarn = console.warn.bind(console);
+        console.warns = [];
+        console.warn = function () {
+            // default &  console.warn()
+            console.defaultWarn.apply(console, arguments);
+            // new & array data
+            console.warns.push(Array.from(arguments));
+        }
+
+        window.uiConfig = @Html.Raw(UIConfigFactorySvc.GetUIConfigAsJson())
+        window.userDeviceInfo = @Html.Raw(UserDeviceSvc.GetUiJson())
+
+        // Extended solution for hiding address bar:
+        // function x() {
+        //
+        //   var browser = window,
+        //       doc = browser.document;
+        //
+        //   // If there's a hash, or addEventListener is undefined, stop here
+        //   if ( !location.hash || !browser.addEventListener ) {
+        //
+        //     //set to 1
+        //     window.scrollTo( 0, 1 );
+        //     var scrollTop = 1,
+        //
+        //     //reset to 0 if needed
+        //     checkWindowBody = setInterval(function(){
+        //       if( doc.body ){
+        //         clearInterval( checkWindowBody );
+        //         scrollTop = "scrollTop" in doc.body ? doc.body.scrollTop : 1;
+        //         browser.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+        //       }
+        //     }, 15 );
+        //
+        //     if (browser.addEventListener) {
+        //       browser.addEventListener("load", function(){
+        //         setTimeout(function(){
+        //           //reset to hide address
+        //           browser.scrollTo( 0, scrollTop === 1 ? 0 : 1 );
+        //         }, 0);
+        //       }, false );
+        //     }
+        //   }
+        // };
+        //
+        // setTimeout(() => x(), 5000);
+
+    </script>
+</head>
+
+<body ontouchstart="" style="margin: 0" class="@(UserDeviceSvc.Info.IsBot ? "isBot" : "")">
+
+<div id="app">
+    <div id="welcome">
+        <img src="/public/swipetor/favicon-192.png" alt=""/>
+    </div>
+</div>
+
+<script src="/@Model.PublicDir/build/vendor.bundle.js"></script>
+<script src="/@Model.PublicDir/build/ui.bundle.js"></script>
+
+<script>
+        var _paq = window._paq = window._paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['setRequestMethod', 'POST']);
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+
+        (function () {
+            var u = "//mtm.swipetor.com/";
+            _paq.push(['setTrackerUrl', u + 'mtm']);
+            _paq.push(['setSiteId', '6']);
+            var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+            g.async = true; g.src = u + 'mtm.js'; s.parentNode.insertBefore(g, s);
+        })();
+    </script>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"/>
+</body>
+
+</html>

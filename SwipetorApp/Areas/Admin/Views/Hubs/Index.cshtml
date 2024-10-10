@@ -1,0 +1,36 @@
+@model SwipetorApp.Areas.Admin.ViewModels.HubsHomeViewModel
+@{
+    ViewBag.Title = "Hubs";
+}
+
+<div class="head">
+    <div class="actions">
+        <a asp-action="Add" class="mainBtn red right">
+            <i class="material-icons">add</i>
+        </a>
+    </div>
+
+    <h1>Hubs Management</h1>
+</div>
+
+<div class="box">
+
+    <table>
+        <thead>
+        <tr>
+            <th>Hub</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        @foreach (var hub in Model.Hubs)
+        {
+            <partial name="IndexHubRowPartial" model="hub"/>
+        }
+
+        </tbody>
+    </table>
+
+</div>

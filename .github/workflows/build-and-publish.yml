@@ -1,0 +1,142 @@
+name: .NET Core Build and Release
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Setup .NET Core
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "8.0.x"
+          
+      - name: Setup JQ
+        run: sudo apt-get install -y jq
+
+      - name: Cache FFmpeg
+        id: cache-ffmpeg
+        uses: actions/cache@v2
+        with:
+          path: ffmpeg/
+          key: ffmpeg-${{ runner.os }}
+
+      - name: Download FFmpeg
+        if: steps.cache-ffmpeg.outputs.cache-hit != 'true'
+        run: |
+          mkdir -p ffmpeg
+          wget -O ffmpeg.tar.xz https://johnvansickle.com/ffmpeg/releases/ffmpeg-release-amd64-static.tar.xz
+          tar xvf ffmpeg.tar.xz -C ffmpeg --strip-components=1
+
+      - name: Add FFmpeg into path
+        run: |
+          echo "$(pwd)/ffmpeg" >> $GITHUB_PATH
+          
+      - name: Check FFmpeg Version
+        run: ffmpeg -version
+          
+      - name: Restore dependencies and cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/*.fsproj', '**/*.vbproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+
+      - name: Install LESS
+        run: npm install -g less
+
+      - name: Compile LESS files
+        run: |
+          lessc SwipetorApp/wwwroot/public/styles/public.less SwipetorApp/wwwroot/public/styles/public.css
+          lessc SwipetorApp/wwwroot/admin/styles/_main.less SwipetorApp/wwwroot/admin/styles/_main.css
+          rm -f SwipetorApp/wwwroot/public/styles/*.less
+          rm -f SwipetorApp/wwwroot/admin/styles/*.less
+
+      - name: Restore, Build and Test
+        run: |
+          dotnet nuget add source https://nuget.pkg.github.com/atas/index.json -n github -u ${{github.repository_owner}} -p ${{secrets.PKGS_READ_TOKEN}} --store-password-in-clear-text
+          dotnet restore
+          dotnet build --no-restore
+          dotnet test --no-build --verbosity normal --filter FullyQualifiedName~Tests
+
+      - name: Publish Application
+        run: dotnet publish --configuration Release --output ./publish
+
+      - name: Archive Published App
+        run: tar -czf swpapp.tar.gz -C ./publish .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: swpapp
+          path: swpapp.tar.gz
+
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    needs: build_and_test
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Download artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: swpapp
+
+      - name: Set next version
+        run: |
+          next_version=$(git for-each-ref --sort=-creatordate --format '%(refname:short)' refs/tags/v* | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -n 1 | awk -F '.' '{print $1 "." $2 "." $3+1}')
+          next_version=${next_version#v}
+          echo "next_version=$next_version"
+          echo "next_version=$next_version" >> $GITHUB_ENV
+
+      - name: Commit msg
+        id: commit_msg
+        run: |
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          echo "commit_msg=$commit_msg" >> $GITHUB_ENV
+
+      - name: Create GitHub Release
+        run: |
+          mv swpapp.tar.gz swpapp-$next_version.tar.gz
+          gh release create "v$next_version" swpapp-$next_version.tar.gz\
+            --title "Release v$next_version" \
+            --notes "$commit_msg"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          ls -lha ~/.ssh
+          echo "${{ secrets.SSH_PRIV_ARES_UF }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p 1989 ${{ secrets.PROD_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Trigger pull-deploy
+        run: |
+          ssh -p1989 ata@${{ secrets.PROD_HOST }} "/opt/swipetor/bin/pull-deploy/run.sh"
+
+#      - name: Commit bumped version
+#        run: |
+#          git config user.name "GitHub Actions"
+#          git config user.email "<actions@github.com>"
+#          git tag -a "v$next_version" -m "Release v$next_version"
+#          git push origin "v$next_version"
+#

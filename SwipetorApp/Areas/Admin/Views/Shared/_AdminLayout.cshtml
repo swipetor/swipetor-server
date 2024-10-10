@@ -1,0 +1,110 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@ViewBag.Title - Swipetor</title>
+    <link rel="shortcut icon" href="/admin/icons/pulse.png"/>
+
+    <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no"/>
+
+    <link rel="stylesheet" href="/admin/styles/_main.css"/>
+
+    <script src="/admin/scripts/admin.js"></script>
+
+    @RenderSection("header", false)
+</head>
+
+<body>
+<div id="topBarWrapper">
+    <div id="topBar">
+        <a id="topLogoLink" href="#">
+            <i class="material-icons">menu</i>
+            Admin Panel
+        </a>
+
+        <div class="right">
+            <a href="/" target="_blank">
+                <i class="material-icons">language</i>
+                &nbsp; Site &raquo;
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="bodyContainer">
+    <div id="sidenav">
+        <div class="content">
+            <a
+                asp-area="Admin"
+                asp-controller="Home"
+                asp-action="Index"
+                class="mainBtn white">
+                <i class="material-icons">trending_up</i>
+                Dashboard
+            </a>
+
+            @*<a
+		  TODO Implement Admin Post Reviews
+		  asp-area="Admin"
+		  asp-action="Review"
+		  asp-controller="Posts"
+		  class="mainBtn white"
+		>
+		  <i class="material-icons">preview</i>
+		  Review Posts
+		</a>*@
+
+            <a
+                asp-area="Admin"
+                asp-controller="Hubs"
+                asp-action="Index"
+                class="mainBtn white">
+                <i class="material-icons">view_list</i>
+                Hubs management
+            </a>
+            <a
+                asp-area="Admin"
+                asp-controller="Users"
+                asp-action="Index"
+                class="mainBtn white">
+                <i class="material-icons">child_care</i>
+                Users management
+            </a>
+        </div>
+    </div>
+
+    <div id="content">
+        @RenderBody()
+
+        <div id="footer" class="row">
+            <div class="right secondCol">
+                <a href="/terms">Terms</a>
+                |
+                <a href="/privacy">Privacy</a>
+                |
+                <a href="/contact">Contact</a>
+            </div>
+
+            <div class="col copyrightCol">2022 &copy; Swipetor.com</div>
+
+            <br/><br/>
+        </div>
+    </div>
+</div>
+
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"/>
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+
+@RenderSection("scripts", false)
+</body>
+</html>

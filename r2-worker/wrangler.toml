@@ -1,0 +1,23 @@
+name = "r2-worker"
+main = "src/index.ts"
+compatibility_date = "2022-07-31"
+
+[vars]
+
+[env.swipetor]
+name = "swipetor"
+# account_id = "fd2c50ffa8767bed8a71204508d5bac0"
+
+r2_buckets = [
+  { binding = "BUCKET_VIDEOS_DEV", bucket_name = "swipetor-videos-dev", preview_bucket_name =  "swipetor-videos-dev" },
+  { binding = "BUCKET_VIDEOS", bucket_name = "swipetor-videos", preview_bucket_name =  "swipetor-videos-dev" },
+  { binding = "BUCKET_PHOTOS_DEV", bucket_name = "swipetor-photos-dev", preview_bucket_name =  "swipetor-photos-dev" },
+  { binding = "BUCKET_PHOTOS", bucket_name = "swipetor-photos", preview_bucket_name =  "swipetor-photos-dev" },
+  { binding = "BUCKET_SPRITES_DEV", bucket_name = "swipetor-sprites-dev", preview_bucket_name =  "swipetor-sprites-dev" },
+  { binding = "BUCKET_SPRITES", bucket_name = "swipetor-sprites", preview_bucket_name =  "swipetor-sprites-dev" },
+]
+
+[env.swipetor.vars]
+BUCKET_PREFIX_NAME = "swipetor" #This should match to the bucket prefix
+DOMAIN = "swipetor.com" # This var can be used in the future to block requests from other domains
+ALLOWED_DOMAINS = ["swipetor.com"]

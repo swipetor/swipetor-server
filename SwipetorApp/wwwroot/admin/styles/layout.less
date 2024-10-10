@@ -1,0 +1,96 @@
+﻿@import (reference) "_reference";
+
+#topBarWrapper {
+  background: white;
+  height: 50px;
+  box-shadow: 1px 1px 3px 0 #ddd;
+  z-index: 100;
+  position: relative;
+
+  #topBar {
+    .right {
+      display: flex;
+      flex-direction: row;
+      float: right;
+    }
+
+    a {
+      display: inline-flex;
+
+      color: #666;
+      text-shadow: #ccc 1px 0 1px;
+      padding: 11px 20px;
+      height: 28px;
+
+      &:hover {
+        background: #e7e7e7;
+      }
+
+      .text {
+        margin: 5px 0 0 5px;
+      }
+    }
+  }
+}
+
+#bodyContainer {
+  display: flex;
+  flex-direction: row;
+  z-index: 90;
+
+  #sidenav {
+    width: 300px;
+    border-right: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    background: white;
+    z-index: 90;
+    min-height: calc(100vh - 51px);
+
+    transition: left 0.5s; /* Animation duration of 0.5 seconds */
+    position: fixed; /* Use fixed positioning */
+
+    @media @mobile {
+      display: block; /* Always display it, but off-screen when not active */
+      left: -300px; /* Hide sidebar off-screen */
+    }
+
+    /* Class to apply when sidebar is active/visible */
+
+    &.sidenav-active {
+      left: 0; /* Bring sidebar on-screen */
+    }
+
+    .content {
+      position: sticky;
+      overflow: auto;
+      top: 0;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      text-align: left;
+
+      &:hover {
+
+      }
+    }
+  }
+
+  #content {
+    padding: 10px 20px;
+    width: 100%;
+    @media @desktop {
+      max-width: 800px;
+    }
+
+    @media @desktop {
+      margin-left: 310px;
+    }
+
+    > .box {
+      max-width: 800px;
+    }
+  }
+}
+

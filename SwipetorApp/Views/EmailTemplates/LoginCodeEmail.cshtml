@@ -1,0 +1,53 @@
+@inject IOptions<SiteConfig> SiteConfig
+@inject IHostnameCx HostnameCx
+@inject IConnectionCx ConnectionCx
+@using Microsoft.Extensions.Options
+@using SwipetorApp.Services.Config
+@using WebAppShared.Contexts
+@using WebAppShared.Types
+@model SwipetorApp.Models.EmailViewModels.LoginCodeEmailVM
+
+@{
+    var siteName = SiteConfig.Value.Name;
+    var siteEmail = SiteConfig.Value.Email;
+    var hostname = HostnameCx.RequestedHostname;
+    var slogan = SiteConfig.Value.Slogan;
+}
+
+@if (Model.Username != null)
+{
+    <p>Hi @Model.Username,</p>
+}
+else
+{
+    <p>Hi from @siteName,</p>
+}
+
+<p>There is a new login request to your account on @siteName - @slogan</p>
+
+<p>To log into your account, please <strong>Copy & Paste below code onto the login page.</strong>.</p>
+
+<p style="font-weight: bold; text-decoration: underline">
+    @Model.LoginRequest.EmailCode
+</p>
+
+<p style="color: #777;">To copy it, press and hold onto the code a few seconds then select Copy. Do the same to paste it onto the box on the web page.</p>
+<small style="color: #777;">This link will expire in 30 minutes.</small>
+
+<p style="color: #777; font-size: 12px;">
+    This request was made on IP address: @ConnectionCx.IpAddress from @ConnectionCx.IpAddressCountry with a browser agent @ConnectionCx.BrowserAgent
+</p>
+
+<p>
+    See you soon, <strong>@siteName</strong>
+</p>
+
+<div style="color: #777; font-size:  13px;">
+    This email is sent to you by @siteName at @hostname
+    <br/>
+    This email is a one time email serves as a login link. As this is not a mailing list, we are unable to
+    provide an unsubscribe link here.
+    <br/>
+    If you think this email is sent to you by mistake, you can ignore it. If this keeps happening, you can contact
+    <a href="mailto:@siteEmail">@siteEmail</a> and we will look into.
+</div>

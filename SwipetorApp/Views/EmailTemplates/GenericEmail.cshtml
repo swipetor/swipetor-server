@@ -1,0 +1,10 @@
+﻿@using SwipetorApp.Models.EmailViewModels
+@using SwipetorApp.Services.Emailing
+@model SwipetorApp.Models.EmailViewModels.GenericEmailVM
+
+@Html.Raw(Model.Text)
+
+@if (Model.User != null)
+{
+    <partial name="~/Views/EmailTemplates/UnsubscribePartial.cshtml" model="new UnsubscribePartialEmailVM { User = Model.User, Type = OutgoingEmailType.Generic }"/>
+}

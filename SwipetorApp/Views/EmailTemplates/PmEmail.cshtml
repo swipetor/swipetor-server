@@ -1,0 +1,27 @@
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Microsoft.Extensions.Options
+@using SwipetorApp.Models.EmailViewModels
+@using SwipetorApp.Services.Config
+@using SwipetorApp.Services.Emailing
+@using WebAppShared.Utils
+@model SwipetorApp.Models.EmailViewModels.PmEmailVM
+@inject IOptions<SiteConfig> SiteConfig
+
+@{
+    var site = SiteConfig.Value;
+}
+
+Hi @Model.PmThreadUser.User.Username,
+
+<p>You have <strong>unread private message(s)</strong> in thread between users @Model.OtherUsernames.Shorten(250).</p>
+
+<p>To view your PMs please follow the URL below:</p>
+<p>
+    <a href="https://@site.Hostname/pm">https://@site.Hostname/pm</a>
+</p>
+
+<p>You won't be notified again for messages under this thread until you visit the website.</p>
+
+<p>See you soon, <strong>@site.Name</strong></p>
+
+<partial name="~/Views/EmailTemplates/UnsubscribePartial.cshtml" model="new UnsubscribePartialEmailVM { User = Model.PmThreadUser.User, Type = OutgoingEmailType.Pm }"/>

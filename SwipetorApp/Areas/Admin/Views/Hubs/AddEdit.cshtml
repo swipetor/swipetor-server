@@ -1,0 +1,54 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using SwipetorApp.Models.ViewModels
+@model SwipetorApp.Areas.Admin.ViewModels.HubsAddEditViewModel
+
+@{
+    ViewBag.Title = Model.Id == null ? "Add Hub" : $"Edit Hub {Model.Name ?? ""}";
+    // var photoPartialViewModel = new PhotoPartialViewModel
+    // {
+    // 	Photo = Model?.Photos.FirstOrDefault(),
+    // 	Size = 64
+    // };
+}
+
+<div class="pageHead">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+<div class="box">
+
+    @Html.ValidationSummary()
+
+    <form action="@(Model.Id == null ? "add" : "edit")" method="post" enctype="multipart/form-data">
+
+        <label class="matter-textfield-filled block">
+            <input asp-for="Name" placeholder=" "/>
+            <span>Name</span>
+        </label>
+
+        <br/>
+
+        <p>
+            <partial name="PhotoPartial" model="new PhotoPartialViewModel(Model.Photo, 64)"/>
+            <span>Hub Icon</span>
+            <input asp-for="HubIcon" type="file">
+        </p>
+        <div class="helperText">There are lovely icons on <a href="https://www.iconfinder.com" target="_blank">www.iconfinder.com</a>, filter by free.</div>
+
+        <br/>
+
+        <button type="submit" class="main">
+            @(Model.Id == null ? "Add" : "Update") Hub
+        </button>
+
+        @if (Model.Id != null)
+        {
+            <button type="button" class="main red" onclick="window.location='delete?hubId=@Model.Id';">
+                Delete
+            </button>
+        }
+
+        <input type="hidden" name="Id" value="@Model.Id"/>
+    </form>
+
+</div>

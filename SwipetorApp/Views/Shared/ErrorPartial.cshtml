@@ -1,0 +1,14 @@
+@model SwipetorApp.Models.ViewModels.ErrorPartialViewModel
+
+<div class="pageError makeResponsive">
+    <div class="content alertDanger">
+        <p>
+            <b>@(Model.Title ?? "Error")</b>
+        </p>
+        @foreach (var e in Model.Errors)
+        {
+            @:- @e<br/>
+        }
+    </div>
+</div>
+<br/>

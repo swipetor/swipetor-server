@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@model SwipetorApp.Areas.Admin.ViewModels.HubsDeleteViewModel
+
+@{
+    ViewBag.Title = $"Delete Hub {Model.Hub.Name}";
+}
+
+<div class="pageHead">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+<div class="box">
+
+    @Html.ValidationSummary()
+
+    <form action="delete" method="post" onsubmit="return confirm('Are you sure to delete this?')">
+
+        <p>Please select a hub to move existing posts into:</p>
+
+        <p>
+            @Html.DropDownListFor(m => m.HubIdToMovePosts, new SelectList(Model.HubList, "Item1", "Item2"))
+        </p>
+
+
+        <button type="submit" class="main red">
+            Delete
+        </button>
+
+        @Html.HiddenFor(m => m.HubIdToDelete)
+    </form>
+
+</div>

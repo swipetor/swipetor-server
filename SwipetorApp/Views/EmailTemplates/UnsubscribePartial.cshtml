@@ -1,0 +1,18 @@
+﻿@inject IOptions<SiteConfig> SiteConfig
+@inject IHostnameCx HostnameCx
+@using Microsoft.Extensions.Options
+@using SwipetorApp.Services.Config
+@using WebAppShared.Types
+@model SwipetorApp.Models.EmailViewModels.UnsubscribePartialEmailVM
+
+@{
+    var site = SiteConfig.Value;
+}
+
+<div style="color: #777; margin-top: 5px;">
+    This email is sent to you by @site.Name at @site
+    <br/>
+    If you like to unsubscribe please visit your <a href="https://@HostnameCx.RequestedHostname/my">my page</a> or use this
+    <a href="https://@HostnameCx.RequestedHostname/api/email/unsubscribe/@Model.Type.ToString().ToLowerInvariant()s?email=@Model.User.Email&secret=@Model.User.Secret">unsubscribe</a>
+    link. On any issue, you can contact <a href="mailto:@site.Email">@site.Email</a>
+</div>

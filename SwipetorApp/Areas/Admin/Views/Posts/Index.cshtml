@@ -1,0 +1,33 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using SwipetorApp.Models.ViewModels
+@model SwipetorApp.Areas.Admin.ViewModels.PostsIndexViewModel
+@{
+    ViewBag.Title = "Posts";
+}
+
+<div class="head">
+    <h1>Posts list</h1>
+</div>
+
+<div class="box">
+
+    <div class="postsListTable">
+        @foreach (var p in Model.Posts)
+        {
+            <div>
+                <a href="/p/@p.Id" target="_blank">
+                    <partial name="PhotoPartial" model="new PhotoPartialViewModel(p.Medias.FirstOrDefault()?.PreviewPhoto ?? p.Medias.FirstOrDefault()?.Photo)"/>
+                </a>
+                <br/>
+                <a href="/p/@p.Id" target="_blank">
+                    @p.Title
+                </a>
+                <br/>
+                <div style="font-size: 12px;">
+                    @string.Join(", ", p.Hubs.Select(c => c.Name))
+                </div>
+            </div>
+        }
+    </div>
+
+</div>

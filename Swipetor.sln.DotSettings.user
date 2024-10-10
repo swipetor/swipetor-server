@@ -1,0 +1,54 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=_002FUsers_002Fata_002Fprojects_002Fwebapp_002Dshared_002FWebAppShared_002Fbin_002FRelease_002Fnet8_002E0_002Fpublish_002FWebAppShared_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003ACloneFactory_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003Fde394345edec48919d04f9bb47f3138f6600_003F95_003F01bff6eb_003FCloneFactory_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AThrowHelper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003F6780d13016c376c4491c5618b257d84da7eacf747ed2719783e775546b79b_003FThrowHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AUriHelper_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FSourcesCache_003Fa2f039408d431e502b9ede6d5e39488bc64be92598ba379e8d34c67c8317ec3_003FUriHelper_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=7020124F_002D9FFC_002D4AC3_002D8F3D_002DAAB8E0240759_002Ff_003AUserDeviceSvc_002Ecs_002Fl_003A_002E_002E_003F_002E_002E_003FLibrary_003FApplication_0020Support_003FJetBrains_003FRider2024_002E2_003Fresharper_002Dhost_003FDecompilerCache_003Fdecompiler_003F719b1e0df38941d99248f5752de396c722200_003F84_003F214a08b7_003FUserDeviceSvc_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;
+  &lt;Assembly Path="\Users\ata\.nuget\packages\automapper\9.0.0\lib\netstandard2.0\AutoMapper.dll" /&gt;
+  &lt;Assembly Path="C:\Users\atasa\.nuget\packages\htmlsanitizer.netcore3.1\1.0.0\lib\netcoreapp3.1\HtmlSanitizer.dll" /&gt;
+  &lt;Assembly Path="C:\Users\atasa\.nuget\packages\humanizer.core\2.8.26\lib\netstandard2.0\Humanizer.dll" /&gt;
+  &lt;Assembly Path="C:\Users\atasa\.nuget\packages\serilog.extensions.logging\2.0.2\lib\netstandard2.0\Serilog.Extensions.Logging.dll" /&gt;
+  &lt;Assembly Path="C:\Users\atasa\.nuget\packages\sixlabors.imagesharp\2.0.0\lib\netcoreapp3.1\SixLabors.ImageSharp.dll" /&gt;
+  &lt;Assembly Path="C:\Users\atasa\.nuget\packages\awssdk.s3\3.7.9.19\lib\netcoreapp3.1\AWSSDK.S3.dll" /&gt;
+  &lt;Assembly Path="C:\Users\atasa\.nuget\packages\awssdk.core\3.7.12.3\lib\netcoreapp3.1\AWSSDK.Core.dll" /&gt;
+  &lt;Assembly Path="C:\Program Files\dotnet\shared\Microsoft.NETCore.App\6.0.8\System.ComponentModel.Annotations.dll" /&gt;
+  &lt;Assembly Path="/usr/local/share/dotnet/packs/Microsoft.NETCore.App.Ref/6.0.8/ref/net6.0/System.IO.Pipes.dll" /&gt;
+  &lt;Assembly Path="/usr/local/share/dotnet/shared/Microsoft.NETCore.App/6.0.11/System.Net.Sockets.dll" /&gt;
+  &lt;Assembly Path="/Users/ata/.nuget/packages/ffmpegcore/4.8.0/lib/netstandard2.0/FFMpegCore.dll" /&gt;
+  &lt;Assembly Path="/Users/ata/.nuget/packages/toolbelt.entityframeworkcore.indexattribute.attribute/5.0.0/lib/netstandard2.0/Toolbelt.EntityFrameworkCore.IndexAttribute.Attribute.dll" /&gt;
+  &lt;Assembly Path="/Users/ata/.nuget/packages/anglesharp/1.0.4/lib/net7.0/AngleSharp.dll" /&gt;
+  &lt;Assembly Path="/Users/ata/.nuget/packages/webappshared/1.0.17/lib/net7.0/WebAppShared.dll" /&gt;
+  &lt;Assembly Path="/Users/ata/.nuget/packages/webappshared/1.0.33/lib/net8.0/WebAppShared.dll" /&gt;
+&lt;/AssemblyExplorer&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=13362839_002D9723_002D4457_002Db679_002D907deb577ab3/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="ParseYoutubeVideoId #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;Or&gt;
+    &lt;TestAncestor&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Utils.PasswordUtilsTest&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Utils.KeyGeneratorTest&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Utils.StringUtilsTest&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Types.SetOnceTests.TestSetOnce&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Types.SetOnceTests.TestSetOnceWithoutObjectInitializer&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Types.SetOnceTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Extensions.DateExtsTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Extensions.TimeExtsTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Extensions.ObjectExtensionTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::4D76BEBA-7EF4-4239-8AF9-1328679250E1::net7.0::SwipetorLibsTest.Security.SanitizeTests&lt;/TestId&gt;
+      &lt;TestId&gt;xUnit::95B9CDDE-1ECF-403D-90DC-324D80C8C4C4::net7.0::SwipetorAppTest.Libs.Posts.PostsQuerierTests&lt;/TestId&gt;
+    &lt;/TestAncestor&gt;
+    &lt;ProjectFile&gt;95B9CDDE-1ECF-403D-90DC-324D80C8C4C4/d:System/d:Extensions/f:VideoExtensionTest.cs&lt;/ProjectFile&gt;
+    &lt;Project Location="/Users/ata/projects/ufapp/SwipetorAppTest" Presentation="&amp;lt;SwipetorAppTest&amp;gt;" /&gt;
+  &lt;/Or&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=8407cc04_002Dadc1_002D425e_002D9201_002Db372ae874898/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="GenerateClipsAndMerge_Successful" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::95B9CDDE-1ECF-403D-90DC-324D80C8C4C4::net8.0::SwipetorAppTest.VideoServices.VideoClipGeneratorTest&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::95B9CDDE-1ECF-403D-90DC-324D80C8C4C4::net8.0::SwipetorAppTest.System.Extensions.VideoExtensionsTests&lt;/TestId&gt;
+    &lt;TestId&gt;xUnit::95B9CDDE-1ECF-403D-90DC-324D80C8C4C4::net8.0::SwipetorAppTest.Utils.ListExtsTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=a9e79786_002D6370_002D41ce_002Da1ef_002D2fc9035f1347/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ParseYoutubeVideoId" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;
+  &lt;TestAncestor&gt;
+    &lt;TestId&gt;xUnit::95B9CDDE-1ECF-403D-90DC-324D80C8C4C4::net8.0::SwipetorAppTest.Utils.ListExtsTests&lt;/TestId&gt;
+  &lt;/TestAncestor&gt;
+&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

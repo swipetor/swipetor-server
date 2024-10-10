@@ -1,0 +1,24 @@
+﻿@using SwipetorApp.Models.ViewModels
+@model SwipetorApp.Models.DbEntities.Hub
+
+<tr>
+    <td>
+        <partial name="PhotoPartial" model="new PhotoPartialViewModel(Model?.Photo, 32)"/>
+    </td>
+    <td>
+        @Model.Name
+    </td>
+    <td>
+        @* <a asp-area="Admin" asp-controller="Forums" asp-action="Up" asp-route-forumId="@Model.Id"> *@
+        @* 	<i class="material-icons">arrow_drop_up</i> *@
+        @* </a> *@
+        @* *@
+        @* <a asp-area="Admin" asp-controller="Forums" asp-action="Down" asp-route-forumId="@Model.Id"> *@
+        @* 	<i class="material-icons">arrow_drop_down</i> *@
+        @* </a> *@
+
+        <a asp-area="Admin" asp-controller="Hubs" asp-action="Edit" asp-route-hubId="@Model.Id">
+            <i class="material-icons">edit</i>
+        </a>
+    </td>
+</tr>

@@ -1,0 +1,27 @@
+@model SwipetorApp.Areas.Admin.ViewModels.AdminHomeViewModel
+@{
+    ViewBag.Title = "Admin Dashboard ";
+}
+
+@section scripts
+{
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {'packages':['corechart']});
+      </script>
+}
+
+<div class="pageHead">
+    <h1>
+        Admin Dashboard
+    </h1>
+</div>
+
+<div class="box">
+    <p>Total users: @Model.TotalUsers</p>
+    <p>Total posts: @Model.TotalPosts</p>
+</div>
+
+@* <h2>Admin Dashboard</h2> *@
+
+@* <partial name="WeeklyNewMembersChart" /> *@

@@ -1,0 +1,284 @@
+﻿@import (reference) "_reference";
+
+html,
+body {
+  height: 100%;
+  font-size: 16px;
+  color: #555555;
+}
+
+body {
+  height: 100%;
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+
+  background: @bodyBgColor;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: @accent;
+  text-decoration: none;
+  outline: none;
+
+  &:link,
+  &:visited {
+    color: @accent;
+    text-decoration: none;
+    outline: none;
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  &.red {
+    background: #ce3d4d;
+    color: White;
+
+    &:hover {
+      color: white;
+    }
+  }
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: #999;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+
+  &:hover {
+    background: lighten(@linkSelectedBgColor, 4%);
+  }
+
+  &:active {
+    filter: brightness(1.2);
+  }
+}
+
+a.btn,
+label.btn {
+  color: #888;
+  font-weight: 300;
+  font-family: 'Roboto', sans-serif;
+  background: white;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:hover {
+    color: #999;
+    background: #eee;
+  }
+
+  &:active {
+    // filter: brightness(1.2);
+    background: #fff;
+    color: #999;
+  }
+}
+
+.mainBtn,
+a.mainBtn,
+button.main {
+  background: @accent;
+  border-radius: 3px;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  font-weight: normal;
+  text-align: center;
+  box-sizing: border-box;
+  outline-color: darken(@accent, 10%);
+
+  &:link {
+    color: white;
+  }
+
+  &:hover {
+    background: lighten(@accent, 3%);
+  }
+
+  &:active {
+    background: lighten(@accent, 22%);
+    color: @accent;
+    filter: none;
+  }
+
+  &.red {
+    @bgColor: #c54c1f;
+    background: @bgColor;
+
+    &:hover {
+      background: lighten(@bgColor, 3%);
+    }
+
+    &:active {
+      background: lighten(@bgColor, 40%);
+      color: @bgColor;
+      filter: none;
+    }
+  }
+
+  &.grey {
+    @bgColor: rgb(235, 235, 235);
+    background: @bgColor;
+    color: #666;
+
+    &:hover {
+      background: darken(@bgColor, 10%);
+    }
+
+    &:active {
+      background: darken(@bgColor, 40%);
+      color: @bgColor;
+      filter: none;
+    }
+  }
+
+  &.white {
+    @bgColor: rgb(255, 255, 255);
+    background: @bgColor;
+    color: #666;
+
+    &:hover {
+      background: darken(@bgColor, 10%);
+    }
+
+    &:active {
+      background: darken(@bgColor, 40%);
+      color: @bgColor;
+      filter: none;
+    }
+  }
+}
+
+.matter-textfield-filled {
+  @focusActiveBorder: 1px solid darken(#eee, 8%);
+
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+
+  &:focus-within,
+  &:hover {
+    border: @focusActiveBorder;
+  }
+
+  &:hover input,
+  &:hover textarea {
+    background-color: rgba(var(--matter-onsurface-rgb, 0, 0, 0), 0.04);
+  }
+
+  input,
+  textarea {
+    caret-color: auto;
+    border-radius: 6px;
+    border-bottom: none;
+    resize: none;
+
+    &:focus {
+      background: white;
+      resize: vertical;
+    }
+
+    &:focus + span {
+      color: inherit;
+    }
+
+    &:focus + span::after {
+      transform: scale(0) !important;
+    }
+  }
+}
+
+hr {
+  border: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
+.box {
+  max-width: @siteWidth;
+  text-align: left;
+  background: white;
+  margin: 10px auto;
+  padding: 10px 20px;
+  box-shadow: 0 1px 3px 0 #ddd;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 24px;
+    text-align: left;
+    margin-top: 15px;
+  }
+}
+
+.centeredPage {
+  margin: 20px auto 0 auto;
+  max-width: 800px;
+  background: white;
+  padding: 10px;
+  border: 1px solid #eee;
+  box-shadow: 0 6px 6px -6px #ddd;
+}
+
+div.horizontalLine {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+  line-height: 0.1em;
+  margin: 10px 0 20px;
+
+  span {
+    background: #fff;
+    padding: 0 10px;
+    color: #999;
+    font-weight: 300;
+  }
+}
+
+.pageHead {
+  margin: 0 auto;
+  max-width: @siteWidth;
+
+  h1 {
+    font-size: 32px;
+    font-weight: 300;
+    color: #666;
+    text-shadow: 1px 1px 2px #888;
+  }
+}
+
+#footer {
+  margin: 0 auto;
+  max-width: 100%;
+  text-shadow: 1px 1px 1px #fff;
+
+  .copyrightCol {
+    color: #999;
+  }
+
+  .secondCol {
+    color: #aaa;
+    text-align: right;
+
+    a {
+      margin-left: 10px;
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0px;
+      }
+    }
+  }
+}
+

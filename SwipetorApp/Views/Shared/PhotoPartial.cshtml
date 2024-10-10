@@ -1,0 +1,12 @@
+﻿@inject PhotoUrlBuilderSvc PhotoUrlBuilderSvc
+@using WebAppShared.Photos
+@model SwipetorApp.Models.ViewModels.PhotoPartialViewModel
+
+@{
+    Layout = null;
+}
+
+@if (Model.Photo != null)
+{
+    <img src="@PhotoUrlBuilderSvc.GetFullUrl(Model.Photo, Model.Size)" alt="Photo"/>
+}
