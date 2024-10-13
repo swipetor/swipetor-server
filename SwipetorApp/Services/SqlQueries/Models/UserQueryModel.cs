@@ -1,5 +1,4 @@
-﻿using SwipetorApp.Migrations;
-using SwipetorApp.Models.DbEntities;
+﻿using SwipetorApp.Models.DbEntities;
 
 namespace SwipetorApp.Services.SqlQueries.Models;
 
