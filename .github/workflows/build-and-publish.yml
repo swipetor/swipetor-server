@@ -132,11 +132,21 @@ jobs:
       - name: Trigger pull-deploy
         run: |
           ssh -p1989 ata@${{ secrets.PROD_HOST }} "/opt/swipetor/bin/pull-deploy/run.sh"
+  
+  
+  deploy:
+    needs: build_and_test
+    runs-on: ubuntu-latest
+    environment: main
+    steps:
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          ls -lha ~/.ssh
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-#      - name: Commit bumped version
-#        run: |
-#          git config user.name "GitHub Actions"
-#          git config user.email "<actions@github.com>"
-#          git tag -a "v$next_version" -m "Release v$next_version"
-#          git push origin "v$next_version"
-#
+      - name: Trigger pull-deploy
+        run: |
+          ssh -p${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "/opt/swipetor/bin/pull-deploy/run.sh"

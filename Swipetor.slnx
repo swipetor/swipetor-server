@@ -1,0 +1,4 @@
+﻿<Solution>
+  <Project Path="SwipetorAppTest\SwipetorAppTest.csproj" Type="Classic C#" />
+  <Project Path="SwipetorApp\SwipetorApp.csproj" Type="Classic C#" />
+</Solution>
