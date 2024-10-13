@@ -67,7 +67,7 @@ jobs:
 
       - name: Restore, Build and Test
         run: |
-          dotnet nuget add source https://nuget.pkg.github.com/atas/index.json -n github --store-password-in-clear-text
+          dotnet nuget add source --username atas --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/atas/index.json"
           dotnet restore
           dotnet build --no-restore
           dotnet test --no-build --verbosity normal --filter FullyQualifiedName~Tests
