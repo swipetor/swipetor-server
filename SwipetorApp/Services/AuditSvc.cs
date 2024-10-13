@@ -1,8 +1,8 @@
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Types;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Types;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services;
 

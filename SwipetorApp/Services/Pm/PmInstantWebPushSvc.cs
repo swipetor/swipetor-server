@@ -6,8 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.WebPush;
-using WebAppShared.Utils;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Utils;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Pm;
 

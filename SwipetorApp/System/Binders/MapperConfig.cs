@@ -6,9 +6,9 @@ using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.DTOs;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.SqlQueries.Models;
-using WebAppShared.Extensions;
-using WebAppShared.SharedLogic.Fx;
-using WebAppShared.Uploaders.R2;
+using WebLibServer.Extensions;
+using WebLibServer.SharedLogic.Fx;
+using WebLibServer.Uploaders.R2;
 
 namespace SwipetorApp.System.Binders;
 

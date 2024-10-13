@@ -1,5 +1,5 @@
 using JetBrains.Annotations;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services;
 

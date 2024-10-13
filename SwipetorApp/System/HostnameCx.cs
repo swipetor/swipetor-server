@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Options;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Types;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Types;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.System;
 

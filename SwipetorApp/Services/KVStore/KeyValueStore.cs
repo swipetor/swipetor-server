@@ -5,8 +5,8 @@ using JetBrains.Annotations;
 using Microsoft.Extensions.Logging;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.SharedLogic.KVStore;
-using WebAppShared.WebSys.DI;
+using WebLibServer.SharedLogic.KVStore;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.KVStore;
 

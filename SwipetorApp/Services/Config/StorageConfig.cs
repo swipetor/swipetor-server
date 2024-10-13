@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 using SwipetorApp.Services.Config.UIConfigs;
-using WebAppShared.Uploaders;
+using WebLibServer.Uploaders;
 
 namespace SwipetorApp.Services.Config;
 

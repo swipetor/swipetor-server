@@ -4,7 +4,7 @@ using System.IO;
 using System.Threading.Tasks;
 using FFMpegCore;
 using SwipetorAppTest.TestLibs;
-using WebAppShared.Videos;
+using WebLibServer.Videos;
 using Xunit;
 using Xunit.Abstractions;
 

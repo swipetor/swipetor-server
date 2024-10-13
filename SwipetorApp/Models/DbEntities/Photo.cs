@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
-using WebAppShared.Photos;
-using WebAppShared.Types;
+using WebLibServer.Photos;
+using WebLibServer.Types;
 
 namespace SwipetorApp.Models.DbEntities;
 

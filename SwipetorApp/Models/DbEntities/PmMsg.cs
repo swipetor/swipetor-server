@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.Intrinsics.X86;
 using JetBrains.Annotations;
-using WebAppShared.Types;
+using WebLibServer.Types;
 
 namespace SwipetorApp.Models.DbEntities;
 

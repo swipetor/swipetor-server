@@ -74,13 +74,13 @@ jobs:
         run: dotnet publish --configuration Release --output ./publish
 
       - name: Archive Published App
-        run: tar -czf swpapp.tar.gz -C ./publish .
+        run: tar -czf swpserver.tar.gz -C ./publish .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
-          name: swpapp
-          path: swpapp.tar.gz
+          name: swpserver
+          path: swpserver.tar.gz
 
   release:
     runs-on: ubuntu-latest
@@ -97,7 +97,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          name: swpapp
+          name: swpserver
 
       - name: Set next version
         run: |
@@ -114,8 +114,8 @@ jobs:
 
       - name: Create GitHub Release
         run: |
-          mv swpapp.tar.gz swpapp-$next_version.tar.gz
-          gh release create "v$next_version" swpapp-$next_version.tar.gz\
+          mv swpserver.tar.gz swpserver-$next_version.tar.gz
+          gh release create "v$next_version" swpserver-$next_version.tar.gz\
             --title "Release v$next_version" \
             --notes "$commit_msg"
         env:

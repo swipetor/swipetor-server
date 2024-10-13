@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using SwipetorApp.Models.DbEntities;
-using WebAppShared.WebSys.MvcAttributes;
+using WebLibServer.WebSys.MvcAttributes;
 
 namespace SwipetorApp.Areas.Admin.ViewModels;
 

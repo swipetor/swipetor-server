@@ -20,9 +20,9 @@ using SwipetorApp.Services.Posts;
 using SwipetorApp.Services.SqlQueries;
 using SwipetorApp.Services.VideoServices;
 using SwipetorApp.System;
-using WebAppShared.DI;
-using WebAppShared.Exceptions;
-using WebAppShared.Metrics;
+using WebLibServer.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.Metrics;
 
 namespace SwipetorApp.Areas.Api;
 

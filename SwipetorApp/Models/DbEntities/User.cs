@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
 using SwipetorApp.Services.Auth;
 using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
-using WebAppShared.Types;
+using WebLibServer.Types;
 
 namespace SwipetorApp.Models.DbEntities;
 

@@ -6,9 +6,9 @@ using Microsoft.EntityFrameworkCore;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Models.Extensions;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.DI;
-using WebAppShared.SharedLogic.Sitemaps;
-using WebAppShared.Types;
+using WebLibServer.DI;
+using WebLibServer.SharedLogic.Sitemaps;
+using WebLibServer.Types;
 
 namespace SwipetorApp.Areas.HostMaster;
 

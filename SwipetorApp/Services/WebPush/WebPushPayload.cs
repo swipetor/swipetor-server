@@ -1,4 +1,4 @@
-﻿using WebAppShared.WebPush;
+﻿using WebLibServer.WebPush;
 
 namespace SwipetorApp.Services.WebPush;
 

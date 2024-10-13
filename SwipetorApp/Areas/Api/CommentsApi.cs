@@ -13,8 +13,8 @@ using SwipetorApp.Services.Notifs;
 using SwipetorApp.Services.RateLimiter;
 using SwipetorApp.Services.RateLimiter.Rules;
 using SwipetorApp.Services.SqlQueries;
-using WebAppShared.Exceptions;
-using WebAppShared.Security;
+using WebLibServer.Exceptions;
+using WebLibServer.Security;
 
 namespace SwipetorApp.Areas.Api;
 

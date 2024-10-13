@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.DTOs;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Models.ViewModels;
 

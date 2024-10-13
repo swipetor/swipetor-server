@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 using SwipetorApp.Models.DbEntities;
-using WebAppShared.Uploaders;
+using WebLibServer.Uploaders;
 
 namespace SwipetorApp.System.Extensions;
 

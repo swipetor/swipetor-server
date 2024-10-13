@@ -10,11 +10,11 @@ using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.System.Extensions;
 using SwipetorApp.Utils;
-using WebAppShared.DI;
-using WebAppShared.Disk;
-using WebAppShared.Uploaders;
-using WebAppShared.Videos;
-using WebAppShared.WebSys.DI;
+using WebLibServer.DI;
+using WebLibServer.Disk;
+using WebLibServer.Uploaders;
+using WebLibServer.Videos;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.VideoServices;
 

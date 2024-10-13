@@ -2,7 +2,7 @@
 using Divergic.Logging.Xunit;
 using Microsoft.Extensions.Logging;
 using SwipetorApp;
-using WebAppShared.Internal;
+using WebLibServer.Internal;
 using Xunit.Abstractions;
 
 namespace SwipetorAppTest.TestLibs;
@@ -17,7 +17,7 @@ public static class TestGlobals
         });
 
         var loggerFactory = new LoggerFactory(new List<ILoggerProvider> { loggerProvider });
-        WebAppSharedDefaults.SetLoggerFactory(loggerFactory);
+        WebLibServerDefaults.SetLoggerFactory(loggerFactory);
         AppDefaults.LoggerFactory.Value = loggerFactory;
     }
 }

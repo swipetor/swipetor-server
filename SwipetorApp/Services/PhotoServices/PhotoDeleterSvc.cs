@@ -3,9 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Exceptions;
-using WebAppShared.Photos;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.Photos;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.PhotoServices;
 

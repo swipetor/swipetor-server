@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using JetBrains.Annotations;
-using WebAppShared.SharedLogic.Fx;
+using WebLibServer.SharedLogic.Fx;
 
 namespace SwipetorApp.Models.DbEntities;
 

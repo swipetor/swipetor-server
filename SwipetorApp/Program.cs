@@ -37,22 +37,22 @@ using SwipetorApp.System;
 using SwipetorApp.System.Binders;
 using SwipetorApp.System.MvcFilters;
 using SwipetorApp.System.UserRoleAuth;
-using WebAppShared.Config;
-using WebAppShared.Contexts;
-using WebAppShared.DI;
-using WebAppShared.Exceptions;
-using WebAppShared.Http;
-using WebAppShared.Internal;
-using WebAppShared.SharedLogic.Recaptcha;
-using WebAppShared.Types;
-using WebAppShared.Uploaders;
-using WebAppShared.Uploaders.R2;
-using WebAppShared.Videos;
-using WebAppShared.WebPush;
-using WebAppShared.WebSys;
-using WebAppShared.WebSys.DI;
-using WebAppShared.WebSys.MvcFilters;
-using WebAppShared.WebSys.MvcRouting;
+using WebLibServer.Config;
+using WebLibServer.Contexts;
+using WebLibServer.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.Http;
+using WebLibServer.Internal;
+using WebLibServer.SharedLogic.Recaptcha;
+using WebLibServer.Types;
+using WebLibServer.Uploaders;
+using WebLibServer.Uploaders.R2;
+using WebLibServer.Videos;
+using WebLibServer.WebPush;
+using WebLibServer.WebSys;
+using WebLibServer.WebSys.DI;
+using WebLibServer.WebSys.MvcFilters;
+using WebLibServer.WebSys.MvcRouting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -176,7 +176,7 @@ CloningInitializer.Init();
 
 // Register services through ServiceAttribute
 ServiceAttribute.RegisterServices(Assembly.GetExecutingAssembly(), s);
-ServiceAttribute.RegisterServices(Assembly.Load("WebAppShared"), s);
+ServiceAttribute.RegisterServices(Assembly.Load("WebLibServer"), s);
 
 //			services.TryAddEnumerable(ServiceDescriptor.Singleton<IFilterProvider, AdminAreaAuthFilterProvider>());
 //			AutoMapperConfiguration.Configure();
@@ -224,7 +224,7 @@ else
 ServiceLocator.SetLocatorProvider(app.Services);
 
 var loggerFactory = app.Services.GetService<ILoggerFactory>();
-WebAppSharedDefaults.SetLoggerFactory(loggerFactory);
+WebLibServerDefaults.SetLoggerFactory(loggerFactory);
 
 loggerFactory.AddFile("/var/log/swipetor/app.log", fileSizeLimitBytes: 104857600, isJson: false,
     minimumLevel: LogLevel.Information, retainedFileCountLimit: 3);

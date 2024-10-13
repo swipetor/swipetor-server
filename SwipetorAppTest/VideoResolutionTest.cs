@@ -1,4 +1,4 @@
-﻿using WebAppShared.Videos;
+﻿using WebLibServer.Videos;
 using Xunit;
 
 namespace SwipetorAppTest;

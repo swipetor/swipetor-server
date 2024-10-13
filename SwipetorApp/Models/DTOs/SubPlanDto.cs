@@ -1,4 +1,4 @@
-using WebAppShared.SharedLogic.Fx;
+using WebLibServer.SharedLogic.Fx;
 
 namespace SwipetorApp.Models.DTOs;
 

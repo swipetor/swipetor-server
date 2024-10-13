@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Notifs;
 

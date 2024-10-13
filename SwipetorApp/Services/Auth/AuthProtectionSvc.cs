@@ -2,9 +2,9 @@ using System;
 using System.Linq;
 using JetBrains.Annotations;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Contexts;
-using WebAppShared.Exceptions;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Contexts;
+using WebLibServer.Exceptions;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Auth;
 

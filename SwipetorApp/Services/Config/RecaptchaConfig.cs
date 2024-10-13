@@ -1,6 +1,6 @@
 using JetBrains.Annotations;
 using SwipetorApp.Services.Config.UIConfigs;
-using WebAppShared.SharedLogic.Recaptcha;
+using WebLibServer.SharedLogic.Recaptcha;
 
 namespace SwipetorApp.Services.Config;
 

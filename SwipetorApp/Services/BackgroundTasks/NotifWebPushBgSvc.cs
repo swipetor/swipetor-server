@@ -9,9 +9,9 @@ using MoreLinq;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.WebPush;
 using SwipetorApp.Services.WebPush.Notifs;
-using WebAppShared.BackgroundTasks;
-using WebAppShared.DI;
-using WebAppShared.Metrics;
+using WebLibServer.BackgroundTasks;
+using WebLibServer.DI;
+using WebLibServer.Metrics;
 
 namespace SwipetorApp.Services.BackgroundTasks;
 

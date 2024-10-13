@@ -10,9 +10,9 @@ using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Auth;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Users;
-using WebAppShared.Contexts;
-using WebAppShared.Exceptions;
-using WebAppShared.Utils;
+using WebLibServer.Contexts;
+using WebLibServer.Exceptions;
+using WebLibServer.Utils;
 
 namespace SwipetorApp.Areas.Api;
 

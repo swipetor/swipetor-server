@@ -8,9 +8,9 @@ using Microsoft.Extensions.Logging;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.DI;
-using WebAppShared.Videos;
-using WebAppShared.WebSys.DI;
+using WebLibServer.DI;
+using WebLibServer.Videos;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.VideoServices;
 

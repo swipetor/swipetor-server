@@ -1,8 +1,8 @@
 ﻿using JetBrains.Annotations;
 using Microsoft.Extensions.Options;
 using SwipetorApp.Services.Config;
-using WebAppShared.Uploaders;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Uploaders;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Storage;
 

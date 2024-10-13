@@ -3,7 +3,7 @@ using System.Linq;
 using JetBrains.Annotations;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services;
 

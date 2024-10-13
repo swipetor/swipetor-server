@@ -20,9 +20,9 @@ using SwipetorApp.Services.Pm;
 using SwipetorApp.Services.SqlQueries;
 using SwipetorApp.Services.Users;
 using SwipetorApp.System;
-using WebAppShared.Exceptions;
-using WebAppShared.Extensions;
-using WebAppShared.WebSys.MvcAttributes;
+using WebLibServer.Exceptions;
+using WebLibServer.Extensions;
+using WebLibServer.WebSys.MvcAttributes;
 
 namespace SwipetorApp.Areas.Api;
 

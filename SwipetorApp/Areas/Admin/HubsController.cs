@@ -10,8 +10,8 @@ using SwipetorApp.Services.Auth;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.PhotoServices;
 using SwipetorApp.System.UserRoleAuth;
-using WebAppShared.DI;
-using WebAppShared.Photos;
+using WebLibServer.DI;
+using WebLibServer.Photos;
 
 namespace SwipetorApp.Areas.Admin;
 

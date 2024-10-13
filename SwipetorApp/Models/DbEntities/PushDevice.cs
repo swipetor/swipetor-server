@@ -2,8 +2,8 @@
 using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
 using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
-using WebAppShared.Types;
-using WebAppShared.WebPush;
+using WebLibServer.Types;
+using WebLibServer.WebPush;
 
 namespace SwipetorApp.Models.DbEntities;
 

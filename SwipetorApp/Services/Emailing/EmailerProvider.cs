@@ -5,10 +5,10 @@ using Microsoft.Extensions.Options;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.EmailViewModels;
 using SwipetorApp.Services.Config;
-using WebAppShared.Emailing;
-using WebAppShared.Metrics;
-using WebAppShared.MVC;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Emailing;
+using WebLibServer.Metrics;
+using WebLibServer.MVC;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Emailing;
 

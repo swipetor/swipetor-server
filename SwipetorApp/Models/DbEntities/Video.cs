@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using JetBrains.Annotations;
 using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
-using WebAppShared.Types;
-using WebAppShared.Videos;
+using WebLibServer.Types;
+using WebLibServer.Videos;
 
 namespace SwipetorApp.Models.DbEntities;
 

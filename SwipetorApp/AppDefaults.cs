@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
-using WebAppShared.Types;
+using WebLibServer.Types;
 
 namespace SwipetorApp;
 
