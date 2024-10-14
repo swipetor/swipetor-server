@@ -2,9 +2,14 @@
 
 Server-side application for open-source Swipetor videos swiping web app.
 
-Find more information on the UI side of the project at https://github.com/atas/swipetor-ui
+More information is at www.swipetor.com and on the UI's repo at https://github.com/atas/swipetor-ui
 
-Visit https://demo.swipetor.com for the demo.
+
+## Demo
+https://demo.swipetor.com
+
+## Setup
+See [Setup](docs/setup.md)
 
 ## Dual Licensing
 
