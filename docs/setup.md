@@ -1,9 +1,12 @@
 
 ### Components
 
+- .NET 8
 - PostgreSQL (main db)
 - InfluxDB (metrics)
 - Nignx (for local proxying to swipetor-ui and swipetor-server)
+- ffmpeg & MP4Box CLIs (for video processing)
+- - Search for their installation on your platform.
 
 ### Cloud Services
 
@@ -81,5 +84,13 @@ server {
 - Ensure the project compiles as a .net project
 - Update database with `dotnet ef database update`
 
+### CloudFlare R2 Setup
+
+R2 needs CloudFlare workers to serve requests.  
+See `r2-worker` directory. Update `wrangler.toml` and run `make deploy`. You will need to do `npm install` first.
+Also, your worker hostname should match in the `appsettings` config json.
+
 ### Run
-Run the project like a normal .net project.
+- Ensure all packages are downloaded with `nuget restore`
+- `SwipetorAppTest` test project should run fine, try running in the IDE.
+- Run the project like a normal .net project.

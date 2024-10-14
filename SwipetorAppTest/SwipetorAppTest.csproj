@@ -31,9 +31,4 @@
         <ProjectReference Include="..\SwipetorApp\SwipetorApp.csproj"/>
     </ItemGroup>
 
-    <ItemGroup>
-        <Folder Include="Libs\"/>
-        <Folder Include="Models\"/>
-    </ItemGroup>
-
 </Project>
