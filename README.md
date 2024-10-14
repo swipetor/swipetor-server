@@ -4,7 +4,6 @@ Server-side application for open-source Swipetor videos swiping web app.
 
 More information is at www.swipetor.com and on the UI's repo at https://github.com/atas/swipetor-ui
 
-
 ## Demo
 https://demo.swipetor.com
 
@@ -19,4 +18,4 @@ See [Setup](docs/setup.md)
       PR back for any improvements.
     - This license restricts multi-tenant or multi-domain usage.
 - **Dual Licensing**: Please contact at www.swipetor.com.
-- 
+
