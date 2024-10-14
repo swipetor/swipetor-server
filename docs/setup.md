@@ -1,14 +1,17 @@
 
-### Components
+### Prerequisites
+
+#### Components
 
 - .NET 8
 - PostgreSQL (main db)
 - InfluxDB (metrics)
 - Nignx (for local proxying to swipetor-ui and swipetor-server)
-- ffmpeg & MP4Box CLIs (for video processing)
-- - Search for their installation on your platform.
+- ffmpeg, MP4Box, yt-dlp CLIs (for video processing)
+- - Search their installation on your platform.
+- SMTP server — try `MailHog` for dev env
 
-### Cloud Services
+#### Cloud Services
 
 - [Firebase cloud app](https://firebase.google.com/) — for push notifications - free
 - [CloudFlare R2](https://www.cloudflare.com/developer-platform/r2/) — file storage - good free tier & no egress fees
@@ -94,3 +97,5 @@ Also, your worker hostname should match in the `appsettings` config json.
 - Ensure all packages are downloaded with `nuget restore`
 - `SwipetorAppTest` test project should run fine, try running in the IDE.
 - Run the project like a normal .net project.
+
+See [swipetor-ui Setup](https://github.com/atas/swipetor-ui/blob/main/docs/setup.md) for other components.
