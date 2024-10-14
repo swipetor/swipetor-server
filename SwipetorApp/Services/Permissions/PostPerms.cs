@@ -1,6 +1,6 @@
 ﻿using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Auth;
-using WebAppShared.Exceptions;
+using WebLibServer.Exceptions;
 
 namespace SwipetorApp.Services.Permissions;
 

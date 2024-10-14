@@ -6,7 +6,7 @@ using SwipetorApp.Services.Auth;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Emailing;
 using SwipetorApp.System.UserRoleAuth;
-using WebAppShared.Metrics;
+using WebLibServer.Metrics;
 
 namespace SwipetorApp.Areas.Api;
 

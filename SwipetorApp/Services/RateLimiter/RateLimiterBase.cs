@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Extensions.Logging;
-using WebAppShared.Contexts;
-using WebAppShared.Exceptions;
+using WebLibServer.Contexts;
+using WebLibServer.Exceptions;
 using NotImplementedException = System.NotImplementedException;
 
 namespace SwipetorApp.Services.RateLimiter;

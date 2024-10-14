@@ -1,8 +1,8 @@
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using SwipetorApp.Models.DbEntities;
-using WebAppShared.Contexts;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Contexts;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Contexts;
 

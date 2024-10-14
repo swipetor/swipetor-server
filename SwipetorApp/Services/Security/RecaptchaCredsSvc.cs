@@ -2,8 +2,8 @@ using JetBrains.Annotations;
 using Microsoft.Extensions.Options;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Users;
-using WebAppShared.SharedLogic.Recaptcha;
-using WebAppShared.WebSys.DI;
+using WebLibServer.SharedLogic.Recaptcha;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Security;
 

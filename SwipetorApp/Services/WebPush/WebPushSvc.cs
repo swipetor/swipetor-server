@@ -6,8 +6,8 @@ using Microsoft.Extensions.Logging;
 using MoreLinq;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.WebPush;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebPush;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.WebPush;
 

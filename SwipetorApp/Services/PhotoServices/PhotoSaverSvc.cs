@@ -8,8 +8,8 @@ using JetBrains.Annotations;
 using Microsoft.Extensions.Logging;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Photos;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Photos;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.PhotoServices;
 

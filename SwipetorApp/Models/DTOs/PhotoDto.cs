@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SwipetorApp.Services.Config.UIConfigs;
-using WebAppShared.Photos;
+using WebLibServer.Photos;
 
 namespace SwipetorApp.Models.DTOs;
 

@@ -1,5 +1,5 @@
 ﻿using SwipetorApp.Models.DbEntities;
-using WebAppShared.Http;
+using WebLibServer.Http;
 
 namespace SwipetorApp.Models.Extensions;
 

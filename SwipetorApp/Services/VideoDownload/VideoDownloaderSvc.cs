@@ -3,9 +3,9 @@ using System.IO;
 using System.Threading.Tasks;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Logging;
-using WebAppShared.Disk;
-using WebAppShared.Utils;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Disk;
+using WebLibServer.Utils;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.VideoDownload;
 

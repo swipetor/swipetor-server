@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Permissions;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Medias;
 

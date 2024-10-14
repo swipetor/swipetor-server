@@ -3,8 +3,8 @@ using System.Linq;
 using JetBrains.Annotations;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Notifs;
-using WebAppShared.Contexts;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Contexts;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Referring;
 

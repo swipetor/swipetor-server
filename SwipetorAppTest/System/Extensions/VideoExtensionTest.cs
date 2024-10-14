@@ -2,8 +2,8 @@ using System;
 using Moq;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.System.Extensions;
-using WebAppShared.Uploaders;
-using WebAppShared.Videos;
+using WebLibServer.Uploaders;
+using WebLibServer.Videos;
 using Xunit;
 
 namespace SwipetorAppTest.System.Extensions;

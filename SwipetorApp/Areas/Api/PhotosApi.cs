@@ -8,9 +8,9 @@ using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.PhotoServices;
-using WebAppShared.Exceptions;
-using WebAppShared.Photos;
-using WebAppShared.Uploaders;
+using WebLibServer.Exceptions;
+using WebLibServer.Photos;
+using WebLibServer.Uploaders;
 
 namespace SwipetorApp.Areas.Api;
 

@@ -21,10 +21,10 @@ using SwipetorApp.Services.VideoDownload;
 using SwipetorApp.Services.VideoServices;
 using SwipetorApp.Services.WebPush;
 using SwipetorApp.System;
-using WebAppShared.DI;
-using WebAppShared.Disk;
-using WebAppShared.Exceptions;
-using WebAppShared.Uploaders;
+using WebLibServer.DI;
+using WebLibServer.Disk;
+using WebLibServer.Exceptions;
+using WebLibServer.Uploaders;
 
 namespace SwipetorApp.Areas.Api;
 

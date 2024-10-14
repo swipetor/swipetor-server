@@ -15,10 +15,10 @@ using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Metrics;
-using WebAppShared.Utils;
-using WebAppShared.WebSys.DI;
-using WebAppShared.WebSys.Exceptions;
+using WebLibServer.Metrics;
+using WebLibServer.Utils;
+using WebLibServer.WebSys.DI;
+using WebLibServer.WebSys.Exceptions;
 
 namespace SwipetorApp.Services.Auth;
 

@@ -13,10 +13,10 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using SwipetorApp.Models.Enums;
 using Toolbelt.ComponentModel.DataAnnotations;
-using WebAppShared.Contexts;
-using WebAppShared.SharedLogic.Fx;
-using WebAppShared.Videos;
-using WebAppShared.WebSys;
+using WebLibServer.Contexts;
+using WebLibServer.SharedLogic.Fx;
+using WebLibServer.Videos;
+using WebLibServer.WebSys;
 
 namespace SwipetorApp.Models.DbEntities;
 

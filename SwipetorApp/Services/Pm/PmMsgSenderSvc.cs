@@ -7,8 +7,8 @@ using Microsoft.Extensions.Logging;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Exceptions;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Pm;
 

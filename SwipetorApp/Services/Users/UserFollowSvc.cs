@@ -1,7 +1,7 @@
 using System.Linq;
 using JetBrains.Annotations;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Users;
 

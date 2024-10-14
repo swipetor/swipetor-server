@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using WebAppShared.WebSys.MvcAttributes;
+using WebLibServer.WebSys.MvcAttributes;
 
 namespace SwipetorApp.Areas.HostMaster.Models;
 

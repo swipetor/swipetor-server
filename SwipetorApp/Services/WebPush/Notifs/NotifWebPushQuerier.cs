@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Utils;
-using WebAppShared.WebSys.DI;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.WebPush.Notifs;
 

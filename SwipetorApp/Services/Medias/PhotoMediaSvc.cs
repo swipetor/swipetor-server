@@ -11,11 +11,11 @@ using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.PhotoServices;
-using WebAppShared.DI;
-using WebAppShared.Exceptions;
-using WebAppShared.Http;
-using WebAppShared.Photos;
-using WebAppShared.WebSys.DI;
+using WebLibServer.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.Http;
+using WebLibServer.Photos;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Medias;
 

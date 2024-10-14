@@ -4,8 +4,8 @@ using System.Linq;
 using JetBrains.Annotations;
 using Microsoft.Extensions.Logging;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Contexts;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Contexts;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.RateLimiter.Rules;
 

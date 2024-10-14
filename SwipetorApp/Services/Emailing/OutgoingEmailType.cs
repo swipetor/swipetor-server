@@ -1,4 +1,4 @@
-﻿using WebAppShared.Emailing;
+﻿using WebLibServer.Emailing;
 
 namespace SwipetorApp.Services.Emailing;
 

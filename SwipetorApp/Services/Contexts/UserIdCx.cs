@@ -1,7 +1,7 @@
 ﻿using System.Net;
 using JetBrains.Annotations;
-using WebAppShared.Exceptions;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Contexts;
 

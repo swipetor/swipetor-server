@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using SwipetorApp.Models.DbEntities;
-using WebAppShared.Exceptions;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Contexts;
 

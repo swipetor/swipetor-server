@@ -16,10 +16,10 @@ using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.PhotoServices;
 using SwipetorApp.Services.Users;
 using SwipetorApp.System;
-using WebAppShared.DI;
-using WebAppShared.Exceptions;
-using WebAppShared.WebSys;
-using WebAppShared.WebSys.MvcAttributes;
+using WebLibServer.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.WebSys;
+using WebLibServer.WebSys.MvcAttributes;
 
 namespace SwipetorApp.Areas.Api;
 

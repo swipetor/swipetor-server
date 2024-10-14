@@ -8,8 +8,8 @@ using SwipetorApp.Models.EmailViewModels;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Emailing;
-using WebAppShared.BackgroundTasks;
-using WebAppShared.Metrics;
+using WebLibServer.BackgroundTasks;
+using WebLibServer.Metrics;
 using User = SwipetorApp.Models.DbEntities.User;
 
 namespace SwipetorApp.Services.BackgroundTasks;

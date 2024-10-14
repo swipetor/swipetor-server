@@ -7,10 +7,10 @@ using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Config.UIConfigs;
 using SwipetorApp.Services.Security;
 using SwipetorApp.Services.Users;
-using WebAppShared.SharedLogic.Fx;
-using WebAppShared.SharedLogic.Recaptcha;
-using WebAppShared.Utils;
-using WebAppShared.WebSys.DI;
+using WebLibServer.SharedLogic.Fx;
+using WebLibServer.SharedLogic.Recaptcha;
+using WebLibServer.Utils;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services;
 

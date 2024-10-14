@@ -1,5 +1,5 @@
 using System.ComponentModel.DataAnnotations;
-using WebAppShared.WebSys.MvcAttributes;
+using WebLibServer.WebSys.MvcAttributes;
 
 namespace SwipetorApp.Areas.Api.Models;
 

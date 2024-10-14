@@ -17,8 +17,8 @@ using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Pm;
 using SwipetorApp.Services.SqlQueries;
 using SwipetorApp.Services.SqlQueries.Models;
-using WebAppShared.Exceptions;
-using WebAppShared.Metrics;
+using WebLibServer.Exceptions;
+using WebLibServer.Metrics;
 
 namespace SwipetorApp.Areas.Api;
 

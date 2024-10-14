@@ -2,8 +2,8 @@
 using System.Text.RegularExpressions;
 using JetBrains.Annotations;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Exceptions;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Exceptions;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Users;
 

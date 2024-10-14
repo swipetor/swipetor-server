@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using SwipetorApp.Models.DbEntities;
-using WebAppShared.Videos;
+using WebLibServer.Videos;
 
 namespace SwipetorApp.Models.DTOs;
 

@@ -4,8 +4,8 @@ using System.IO;
 using System.Threading.Tasks;
 using SwipetorApp.Services.VideoServices;
 using SwipetorAppTest.TestLibs;
-using WebAppShared.Disk;
-using WebAppShared.Videos;
+using WebLibServer.Disk;
+using WebLibServer.Videos;
 using Xunit;
 using Xunit.Abstractions;
 

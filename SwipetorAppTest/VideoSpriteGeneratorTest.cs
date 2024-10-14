@@ -3,7 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using SixLabors.ImageSharp;
 using SwipetorAppTest.TestLibs;
-using WebAppShared.Videos;
+using WebLibServer.Videos;
 using Xunit;
 using Xunit.Abstractions;
 

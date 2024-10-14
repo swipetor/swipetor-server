@@ -10,10 +10,10 @@ using SwipetorApp.Models.EmailViewModels;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Emailing;
-using WebAppShared.BackgroundTasks;
-using WebAppShared.Metrics;
-using WebAppShared.Utils;
-using WebAppShared.WebSys.DI;
+using WebLibServer.BackgroundTasks;
+using WebLibServer.Metrics;
+using WebLibServer.Utils;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.BackgroundTasks;
 

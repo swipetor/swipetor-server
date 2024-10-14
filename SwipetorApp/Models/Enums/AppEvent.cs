@@ -1,4 +1,4 @@
-﻿using WebAppShared.Metrics;
+﻿using WebLibServer.Metrics;
 
 namespace SwipetorApp.Models.Enums;
 

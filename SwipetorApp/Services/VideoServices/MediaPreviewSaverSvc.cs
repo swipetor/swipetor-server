@@ -7,10 +7,10 @@ using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.PhotoServices;
 using SwipetorApp.System.Extensions;
-using WebAppShared.DI;
-using WebAppShared.Uploaders;
-using WebAppShared.Videos;
-using WebAppShared.WebSys.DI;
+using WebLibServer.DI;
+using WebLibServer.Uploaders;
+using WebLibServer.Videos;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.VideoServices;
 

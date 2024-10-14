@@ -13,10 +13,10 @@ using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Emailing;
 using SwipetorApp.System.MvcFilters;
-using WebAppShared.Contexts;
-using WebAppShared.Photos;
-using WebAppShared.Types;
-using WebAppShared.Utils;
+using WebLibServer.Contexts;
+using WebLibServer.Photos;
+using WebLibServer.Types;
+using WebLibServer.Utils;
 
 namespace SwipetorApp.Controllers;
 

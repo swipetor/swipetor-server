@@ -7,7 +7,7 @@ using Microsoft.Extensions.Options;
 using SwipetorApp.Services.Auth;
 using SwipetorApp.Services.Config;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Utils;
+using WebLibServer.Utils;
 
 namespace SwipetorApp.System.UserRoleAuth;
 

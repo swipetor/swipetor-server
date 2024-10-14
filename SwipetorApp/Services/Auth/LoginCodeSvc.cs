@@ -6,10 +6,10 @@ using SwipetorApp.Models.DbEntities;
 using SwipetorApp.Models.EmailViewModels;
 using SwipetorApp.Services.Contexts;
 using SwipetorApp.Services.Emailing;
-using WebAppShared.Contexts;
-using WebAppShared.Exceptions;
-using WebAppShared.Metrics;
-using WebAppShared.WebSys.DI;
+using WebLibServer.Contexts;
+using WebLibServer.Exceptions;
+using WebLibServer.Metrics;
+using WebLibServer.WebSys.DI;
 
 namespace SwipetorApp.Services.Auth;
 

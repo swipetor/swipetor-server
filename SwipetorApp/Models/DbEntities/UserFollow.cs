@@ -1,7 +1,7 @@
 using System;
 using JetBrains.Annotations;
 using Toolbelt.ComponentModel.DataAnnotations.Schema.V5;
-using WebAppShared.Types;
+using WebLibServer.Types;
 
 namespace SwipetorApp.Models.DbEntities;
 

@@ -7,9 +7,9 @@ using SwipetorApp.Models.Enums;
 using SwipetorApp.Models.Extensions;
 using SwipetorApp.Models.ViewModels;
 using SwipetorApp.Services.Contexts;
-using WebAppShared.Photos;
-using WebAppShared.Types;
-using WebAppShared.Utils;
+using WebLibServer.Photos;
+using WebLibServer.Types;
+using WebLibServer.Utils;
 
 namespace SwipetorApp.Controllers;
 

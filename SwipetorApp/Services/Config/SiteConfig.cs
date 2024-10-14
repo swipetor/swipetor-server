@@ -4,7 +4,7 @@ using System.Globalization;
 using JetBrains.Annotations;
 using SwipetorApp.Models.Enums;
 using SwipetorApp.Services.Config.UIConfigs;
-using WebAppShared.SharedLogic.Fx;
+using WebLibServer.SharedLogic.Fx;
 
 namespace SwipetorApp.Services.Config;
 

@@ -1,5 +1,5 @@
 ﻿using SwipetorApp.Models.Enums;
-using WebAppShared.WebSys;
+using WebLibServer.WebSys;
 
 namespace SwipetorApp.Models.ViewModels;
 

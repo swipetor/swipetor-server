@@ -1,4 +1,4 @@
-using WebAppShared.SharedLogic.KVStore;
+using WebLibServer.SharedLogic.KVStore;
 
 namespace SwipetorApp.Services.KVStore;
 

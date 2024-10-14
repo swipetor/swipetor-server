@@ -1,7 +1,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 using JetBrains.Annotations;
-using WebAppShared.Types;
+using WebLibServer.Types;
 
 namespace SwipetorApp.Models.DbEntities;
 

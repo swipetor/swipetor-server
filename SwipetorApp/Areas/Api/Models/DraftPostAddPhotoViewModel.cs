@@ -1,6 +1,6 @@
 ﻿using JetBrains.Annotations;
 using Microsoft.AspNetCore.Http;
-using WebAppShared.WebSys.MvcAttributes;
+using WebLibServer.WebSys.MvcAttributes;
 
 namespace SwipetorApp.Areas.Api.Models;
 
