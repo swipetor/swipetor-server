@@ -122,9 +122,10 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
 
-#      - name: Create GitHub Release
-#        run: |
-#          next_version=${{ steps.bump-release-calver.outputs.next_version }}"
+      - name: Create GitHub Release
+        run: |
+          next_version=${{ steps.bump-release-calver.outputs.next_version }}"
+          echo "Next version: $next_version"
 #          mv swpserver.tar.gz swpserver-$next_version.tar.gz
 #          COMMIT_MSG=$(git log -1 --pretty=%B)
 #          gh release create "v$next_version-dev" swpserver-$next_version.tar.gz\
