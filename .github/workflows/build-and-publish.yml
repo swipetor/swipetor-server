@@ -126,13 +126,13 @@ jobs:
         run: |
           next_version=${{ steps.bump-release-calver.outputs.next_version }}"
           echo "Next version: $next_version"
-#          mv swpserver.tar.gz swpserver-$next_version.tar.gz
-#          COMMIT_MSG=$(git log -1 --pretty=%B)
-#          gh release create "v$next_version-dev" swpserver-$next_version.tar.gz\
-#            --title "Release v$next_version-dev" \
-#            --notes "$COMMIT_MSG"
-#        env:
-#          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          mv swpserver.tar.gz swpserver-$next_version.tar.gz
+          COMMIT_MSG=$(git log -1 --pretty=%B)
+          gh release create "v$next_version" swpserver-$next_version.tar.gz\
+            --title "Release v$next_version" \
+            --notes "$COMMIT_MSG"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   
   
   deploy:
