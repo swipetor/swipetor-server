@@ -121,7 +121,7 @@ jobs:
           latest_release=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest)
           current_version=$(echo "$latest_release" | jq -r .tag_name)
           current_version=${current_version#v} # Remove the 'v' from the version if present
-          current_version=${current_version%-dev} # Remove '-dev' suffix if present
+          current_version=${current_version%-[a-zA-Z0-9]*} # Remove '-[a-zA-Z0-9]*' suffix if present
           IFS='.' read -r major minor patch <<< "$current_version"
 
           # Increment the patch version
