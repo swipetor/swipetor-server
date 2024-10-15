@@ -90,7 +90,7 @@ jobs:
         with:
           name: swpserver      
 
-      - uses: atas/actions/bump-release-calver-action@main
+      - uses: atas/actions/bump-release-calver@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           
