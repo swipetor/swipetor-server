@@ -115,32 +115,23 @@ jobs:
         if: steps.cache-jq.outputs.cache-hit != 'true'
         run: sudo apt-get install -y jq
       #endregion
-
-      - name: Set next version
-        run: |
-          latest_release=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest)
-          current_version=$(echo "$latest_release" | jq -r .tag_name)
-          current_version=${current_version#v} # Remove the 'v' from the version if present
-          current_version=${current_version%-[a-zA-Z0-9]*} # Remove '-[a-zA-Z0-9]*' suffix if present
-          IFS='.' read -r major minor patch <<< "$current_version"
-
-          # Increment the patch version
-          next_version="$major.$minor.$((patch + 1))"
-
-          # Set the next version in the environment
-          echo "next_version=$next_version"
-          echo "next_version=$next_version" >> $GITHUB_ENV
-
+      
+      - id: bump-release-calver
+        uses: atas/bump-release-calver-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          
       - name: Create GitHub Release
         run: |
+          next_version="${{ steps.bump-release-calver.outputs.next_version }}"
+          echo "Next release version: $next_version"
           mv swpserver.tar.gz swpserver-$next_version.tar.gz
           COMMIT_MSG=$(git log -1 --pretty=%B)
-          gh release create "v$next_version-dev" swpserver-$next_version.tar.gz\
-            --title "Release v$next_version-dev" \
+          gh release create "v$next_version" swpserver-$next_version.tar.gz\
+            --title "Release v$next_version" \
             --notes "$COMMIT_MSG"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
   
   deploy:
     runs-on: ubuntu-latest
