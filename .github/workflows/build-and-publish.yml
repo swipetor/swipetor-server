@@ -10,20 +10,33 @@ jobs:
     permissions:
       packages: read
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET Core
-        uses: actions/setup-dotnet@v1
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: "8.0.x"
           
-      - name: Setup JQ
-        run: sudo apt-get install -y jq
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
 
-      - name: Cache FFmpeg
+      #region jq
+      - name: Restore JQ cache
+        id: cache-jq
+        uses: actions/cache@v4
+        with:
+          path: /usr/bin/jq
+          key: jq-${{ runner.os }}-${{ hashFiles('**/*.yml') }}
+
+      - name: Setup JQ
+        if: steps.cache-jq.outputs.cache-hit != 'true'
+        run: sudo apt-get install -y jq
+      #endregion
+
+      #region FFMpeg
+      - name: Restore FFmpeg cache
         id: cache-ffmpeg
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ffmpeg/
           key: ffmpeg-${{ runner.os }}
@@ -38,32 +51,24 @@ jobs:
       - name: Add FFmpeg into path
         run: |
           echo "$(pwd)/ffmpeg" >> $GITHUB_PATH
-          
-      - name: Check FFmpeg Version
-        run: ffmpeg -version
-          
-      - name: Restore dependencies and cache
-        uses: actions/cache@v2
+          ffmpeg -version
+      #endregion
+
+      - name: Compile LESS files
+        run: |
+          npm install -g less
+          lessc SwipetorApp/wwwroot/public/styles/public.less SwipetorApp/wwwroot/public/styles/public.css
+          lessc SwipetorApp/wwwroot/admin/styles/_main.less SwipetorApp/wwwroot/admin/styles/_main.css
+          rm -f SwipetorApp/wwwroot/public/styles/*.less
+          rm -f SwipetorApp/wwwroot/admin/styles/*.less
+
+      - name: Restore NuGet cache
+        uses: actions/cache@v4
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj', '**/*.fsproj', '**/*.vbproj') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
-        
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: "18"
-
-      - name: Install LESS
-        run: npm install -g less
-
-      - name: Compile LESS files
-        run: |
-          lessc SwipetorApp/wwwroot/public/styles/public.less SwipetorApp/wwwroot/public/styles/public.css
-          lessc SwipetorApp/wwwroot/admin/styles/_main.less SwipetorApp/wwwroot/admin/styles/_main.css
-          rm -f SwipetorApp/wwwroot/public/styles/*.less
-          rm -f SwipetorApp/wwwroot/admin/styles/*.less
 
       - name: Restore, Build and Test
         run: |
@@ -79,7 +84,7 @@ jobs:
         run: tar -czf swpserver.tar.gz -C ./publish .
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: swpserver
           path: swpserver.tar.gz
@@ -92,36 +97,46 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Download artifact
-        uses: actions/download-artifact@v3
+        uses: actions/checkout@v4
+        
+      - uses: actions/download-artifact@v4
         with:
           name: swpserver
+          
+      #region jq
+      - name: Restore JQ cache
+        id: cache-jq
+        uses: actions/cache@v4
+        with:
+          path: /usr/bin/jq
+          key: jq-${{ runner.os }}-${{ hashFiles('**/*.yml') }}
+
+      - name: Setup JQ
+        if: steps.cache-jq.outputs.cache-hit != 'true'
+        run: sudo apt-get install -y jq
+      #endregion
 
       - name: Set next version
         run: |
-          current_version=$(git tag | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | sort -V | tail -n 1)
-          current_version=${current_version#v} # remove the 'v' from the version
+          latest_release=$(curl -s https://api.github.com/repos/${{ github.repository }}/releases/latest)
+          current_version=$(echo "$latest_release" | jq -r .tag_name)
+          current_version=${current_version#v} # Remove the 'v' from the version if present
           IFS='.' read -r major minor patch <<< "$current_version"
+
+          # Increment the patch version
           next_version="$major.$minor.$((patch + 1))"
+
+          # Set the next version in the environment
           echo "next_version=$next_version"
           echo "next_version=$next_version" >> $GITHUB_ENV
-
-      - name: Commit msg
-        id: commit_msg
-        run: |
-          COMMIT_MSG=$(git log -1 --pretty=%B)
-          echo "commit_msg=$commit_msg" >> $GITHUB_ENV
 
       - name: Create GitHub Release
         run: |
           mv swpserver.tar.gz swpserver-$next_version.tar.gz
+          COMMIT_MSG=$(git log -1 --pretty=%B)
           gh release create "v$next_version" swpserver-$next_version.tar.gz\
             --title "Release v$next_version" \
-            --notes "$commit_msg"
+            --notes "$COMMIT_MSG"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   

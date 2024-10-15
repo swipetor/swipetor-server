@@ -5,6 +5,8 @@
 bin
 obj
 
+.vscode
+
 SwipetorApp/appsettings.Development.json
 SwipetorApp/App_Data/version.txt
 SwipetorApp/App_Data/firebase-admin.json
