@@ -97,7 +97,7 @@ jobs:
           
       - name: Create GitHub Release
         run: |
-          next_version="${{ steps.bump-release-calver.outputs.next_version }}"
+          next_version="${{ env.next_version }}"
           echo "Next release version: $next_version"
           mv swpserver.tar.gz swpserver-$next_version.tar.gz
           COMMIT_MSG=$(git log -1 --pretty=%B)
