@@ -94,7 +94,7 @@ jobs:
     permissions:
       contents: write
     needs: build_and_test
-#    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -120,8 +120,7 @@ jobs:
         uses: atas/bump-release-calver-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-
+          
       - name: Create GitHub Release
         run: |
           next_version="${{ steps.bump-release-calver.outputs.next_version }}"
@@ -133,7 +132,6 @@ jobs:
             --notes "$COMMIT_MSG"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
   
   deploy:
     runs-on: ubuntu-latest
