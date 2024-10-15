@@ -7,7 +7,7 @@ More information is at www.swipetor.com and on the UI's repo at https://github.c
 ## Demo
 https://demo.swipetor.com
 
-## Setup
+## Swipetor-Server Setup
 See [Setup](docs/setup.md)
 
 ## License
