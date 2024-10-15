@@ -103,18 +103,14 @@ jobs:
         with:
           name: swpserver
           
-      #region jq
-      - name: Restore JQ cache
-        id: cache-jq
-        uses: actions/cache@v4
-        with:
-          path: /usr/bin/jq
-          key: jq-${{ runner.os }}-${{ hashFiles('**/*.yml') }}
-
-      - name: Setup JQ
-        if: steps.cache-jq.outputs.cache-hit != 'true'
-        run: sudo apt-get install -y jq
-      #endregion
+      - name: Check if jq is installed
+        run: |
+          if ! command -v jq &> /dev/null; then
+            echo "jq is not installed. Installing..."
+            sudo apt-get install -y jq
+          else
+            echo "jq is already installed."
+          fi
       
       - id: bump-release-calver
         uses: atas/bump-release-calver-action@main
