@@ -116,7 +116,8 @@ jobs:
         run: sudo apt-get install -y jq
       #endregion
       
-      - uses: atas/bump-release-calver-action@main
+      - id: bump-release-calver
+        uses: atas/bump-release-calver-action@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
