@@ -51,7 +51,6 @@ jobs:
       - name: Add FFmpeg into path
         run: |
           echo "$(pwd)/ffmpeg" >> $GITHUB_PATH
-          ffmpeg -version
       #endregion
 
       - name: Compile LESS files
@@ -75,6 +74,7 @@ jobs:
           dotnet nuget add source --username atas --password ${{ secrets.GITHUB_TOKEN }} --store-password-in-clear-text --name github "https://nuget.pkg.github.com/atas/index.json"
           dotnet restore
           dotnet build --no-restore
+          ffmpeg -version
           dotnet test --no-build --verbosity normal --filter FullyQualifiedName~Tests
 
       - name: Publish Application
