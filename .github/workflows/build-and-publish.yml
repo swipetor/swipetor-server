@@ -146,7 +146,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: release
     if: github.ref == 'refs/heads/main'
-    environment: main
+    environment: demo
     steps:
       - name: Set up SSH
         run: |
