@@ -105,21 +105,18 @@ jobs:
             --notes "$COMMIT_MSG"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
+    
   deploy:
-    runs-on: ubuntu-latest
     needs: release
+    runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
     environment: demo
     steps:
-      - name: Set up SSH
-        run: |
-          mkdir -p ~/.ssh/
-          ls -lha ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519
-          chmod 600 ~/.ssh/id_ed25519
-          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-
-      - name: Trigger pull-deploy
-        run: |
-          ssh -p${{ secrets.SSH_PORT }} ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "/opt/swipetor/bin/pull-deploy/run.sh"
+      - name: Use SSH Deploy Action
+        uses: atas/actions/ssh-exec@1.1
+        with:
+          ssh_key: ${{ secrets.SSH_KEY }}
+          ssh_port: ${{ secrets.SSH_PORT }}
+          ssh_host: ${{ secrets.SSH_HOST }}
+          ssh_user: ${{ secrets.SSH_USER }}
+          deploy_script_path: "/opt/swipetor/bin/pull-deploy/run.sh"
