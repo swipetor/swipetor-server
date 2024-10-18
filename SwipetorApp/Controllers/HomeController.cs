@@ -85,6 +85,7 @@ public class HomeController(
     [Route("/notifs")]
     [Route("/become-creator")]
     [Route("/sub-plans")]
+    [Route("/favs")]
     public IActionResult LoggedOnlyRoutes()
     {
         if (!userCx.IsLoggedIn) return Redirect($"/login?redir={Request.Path}{Request.QueryString}");
