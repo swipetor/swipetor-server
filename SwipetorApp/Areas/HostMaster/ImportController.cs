@@ -17,7 +17,7 @@ using SwipetorApp.System.UserRoleAuth;
 
 namespace SwipetorApp.Areas.HostMaster;
 
-[Area(AreaNames.Admin)]
+[Area(AreaNames.HostMaster)]
 [UserRoleAuth(UserRole.HostMaster)]
 public class ImportController(IDbProvider dbProvider, ILogger<ImportController> logger) : Controller
 {

@@ -152,7 +152,7 @@ public class AuthApi(
         using var db = dbProvider.Create();
 
         // Fetch 10 random words
-        var randomWords = db.EnglishWords
+        var randomWords = db.EnglishWords.Where(w => w.Word.Length >= 3)
             .OrderBy(w => Guid.NewGuid())
             .Take(10)
             .Select(w => w.Word)
