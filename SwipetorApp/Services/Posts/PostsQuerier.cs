@@ -37,7 +37,7 @@ public class PostsQuerier([CanBeNull] User currentUser) : IDisposable
         if (UserId != null) _query = _query.Where(p => p.UserId == UserId);
 
         // Show not-viewed posts firsts
-        _query = _query.OrderBy(p => p.PostViews.Any(pv => pv.UserId == _userIdOrNull)).ThenBy(p => Guid.NewGuid());
+        _query = _query.OrderBy(p => Guid.NewGuid());
 
         if (HubIds is { Count: > 0 })
             SetHubs();
