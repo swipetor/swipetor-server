@@ -92,37 +92,6 @@ public class HomeController(
 
         return View("Appshell", new AppshellViewModel());
     }
-
-    /*[Route("/p/{postId:int}")]
-    [Route("/p/{postId:int}/{slug}")]
-    [ProcessLinkRef]
-    public IActionResult ViewPost(int postId, string slug, int? hubId = null)
-    {
-        using var db = dbProvider.Create();
-        var post = db.Posts.Include(p => p.User).Include(p => p.Influencer)
-            .Include(p => p.PostHubs).Include(post => post.Medias).ThenInclude(postMedia => postMedia.PreviewPhoto)
-            .SingleOrDefault(p => p.Id == postId);
-
-        if (post == null) return RedirectPermanent("/");
-
-        // Only admins and posters can see a deleted post.
-        if (post.IsRemoved) return RedirectPermanent("/");
-
-        if (string.IsNullOrWhiteSpace(slug) || slug.Trim() != post.GetSlug())
-            return RedirectPermanent(post.GetRelativeUrl());
-
-        var desc = !string.IsNullOrWhiteSpace(post.Title) ? post.Title : post.Medias.FirstOrDefault()?.Description;
-        desc = desc.Shorten(157);
-
-        return View("Appshell", new AppshellViewModel
-        {
-            Title = $"{post.Title} by @{post.Influencer?.Name ?? post.User?.Username}",
-            Description = desc.Trim(),
-            Image = photoUrlBuilderSvc.GetFullUrl(post.Medias.MinBy(m => m.Ordering)?.PreviewPhoto),
-            OpenGraphType = OpenGraphType.VideoOther,
-            Url = $"https://{siteConfig.Value.Hostname}{post.GetRelativeUrl()}"
-        });
-    }*/
     
     [Route("/u/{userId:int}/{userName?}")]
     public IActionResult UserPage(int userId, string userName)

@@ -21,8 +21,7 @@ public class FallbackController : Controller
         if (requestPath.StartsWith("/api/", StringComparison.OrdinalIgnoreCase))
             return NotFound();
         
-        // If no influencer is found or if the URL does not match any expected patterns, return 404
-        Response.StatusCode = 404;
-        return View("~/Views/Home/Appshell.cshtml", new AppshellViewModel());
+        //redirect 301
+        return RedirectPermanent("/");
     }
 }
